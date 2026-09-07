@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Pantheon Rome Bot — Scop Tickets",
+  "version": "1.0",
+  "description": "Completa automáticamente el formulario de compra del Pantheon",
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": [
+    "https://portale.museiitaliani.it/*",
+    "https://odhogdwxafqdlfvfbsux.supabase.co/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": { "48": "icon.png" }
+  },
+  "content_scripts": [{
+    "matches": ["https://portale.museiitaliani.it/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }],
+  "icons": { "48": "icon.png" }
+}
